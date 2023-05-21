@@ -1,0 +1,28 @@
+import React, { MouseEvent , Component} from 'react';
+
+interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement>
+    {
+        // Custom properties
+       text: string
+       logo: string
+       url: string
+    }
+
+const Button = ({text, logo, url}: ButtonProps) => {
+    const handleClick = () => {
+        window.location.href = url;
+      };
+
+  return(
+    <button type="button" onClick={handleClick}
+      className="bg-blue-500 hover:bg-blue-700
+       text-white font-bold py-2 px-4 rounded"
+    >
+          <img src={logo} alt="Icon" className="w-8 h-8" />
+          <div>{text}</div>
+    </button>
+  );
+}
+
+export default Button;
+
